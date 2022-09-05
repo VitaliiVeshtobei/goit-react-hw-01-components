@@ -1,4 +1,4 @@
-export function Profile(props) {
+export default function Profile(props) {
   return (
     <div class="profile">
       <div class="description">
