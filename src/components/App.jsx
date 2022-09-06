@@ -1,3 +1,4 @@
+import Box from './Box';
 import user from '../../src/user.json';
 import data from '../data.json';
 import friends from '../friends.json';
@@ -8,7 +9,14 @@ import Profile from './Profile';
 import TransactionHistory from './TransactionHistory';
 export const App = () => {
   return (
-    <div>
+    <Box
+      textAlign="center"
+      pl="300px"
+      pr="300px"
+      pt="30px"
+      pb="30px"
+      bg="#dae4e8"
+    >
       <Profile
         username={user.username}
         tag={user.tag}
@@ -18,7 +26,8 @@ export const App = () => {
       />
       <Statistics title="Upload stats" stats={data} />
       <FriendList friends={friends} />
+
       <TransactionHistory transactions={transactions} />
-    </div>
+    </Box>
   );
 };

@@ -1,32 +1,38 @@
 import PropTypes from 'prop-types';
 import Box from './Box';
-
+// import styled from 'styled-components';
+import { List } from './ListStyled';
+import { TextName } from './ProfileStyled';
+import { Text } from './ProfileStyled';
+import { SpanText } from './ProfileStyled';
 export default function Profile({ avatar, username, tag, location, stats }) {
   const { followers, views, likes } = stats;
   return (
-    <div class="profile">
+    <Box bg="#f7f9fa" pt="20px" class="profile">
       <div class="description">
-        <img src={avatar} alt={username} class="avatar" />
-        <p class="name">{username}</p>
-        <p class="tag">{tag}</p>
-        <p class="location">{location}</p>
+        <img src={avatar} alt={username} width={240} class="avatar" />
+        <TextName class="name">{username}</TextName>
+        <Text class="tag">{tag}</Text>
+        <Text class="location">{location}</Text>
       </div>
 
-      <ul class="stats">
-        <li>
-          <span class="label">Followers</span>
-          <span class="quantity">{followers}</span>
-        </li>
-        <li>
-          <span class="label">Views</span>
-          <span class="quantity">{views}</span>
-        </li>
-        <li>
-          <span class="label">Likes</span>
-          <span class="quantity">{likes}</span>
-        </li>
-      </ul>
-    </div>
+      <List class="stats">
+        <Box display="flex" justifyContent="space-evenly" alignContent="center">
+          <li>
+            <SpanText class="label">Followers</SpanText>
+            <span class="quantity">{followers}</span>
+          </li>
+          <li>
+            <SpanText class="label">Views</SpanText>
+            <span class="quantity">{views}</span>
+          </li>
+          <li>
+            <SpanText class="label">Likes</SpanText>
+            <span class="quantity">{likes}</span>
+          </li>
+        </Box>
+      </List>
+    </Box>
   );
 }
 
