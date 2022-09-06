@@ -1,27 +1,41 @@
-export default function Profile(props) {
+import PropTypes from 'prop-types';
+import Box from './Box';
+
+export default function Profile({ avatar, username, tag, location, stats }) {
+  const { followers, views, likes } = stats;
   return (
     <div class="profile">
       <div class="description">
-        <img src={props.avatar} alt={props.username} class="avatar" />
-        <p class="name">{props.username}</p>
-        <p class="tag">{props.tag}</p>
-        <p class="location">{props.location}</p>
+        <img src={avatar} alt={username} class="avatar" />
+        <p class="name">{username}</p>
+        <p class="tag">{tag}</p>
+        <p class="location">{location}</p>
       </div>
 
       <ul class="stats">
         <li>
           <span class="label">Followers</span>
-          <span class="quantity">{props.stats.followers}</span>
+          <span class="quantity">{followers}</span>
         </li>
         <li>
           <span class="label">Views</span>
-          <span class="quantity">{props.stats.views}</span>
+          <span class="quantity">{views}</span>
         </li>
         <li>
           <span class="label">Likes</span>
-          <span class="quantity">{props.stats.likes}</span>
+          <span class="quantity">{likes}</span>
         </li>
       </ul>
     </div>
   );
 }
+
+Profile.propTypes = {
+  avatar: PropTypes.string,
+  username: PropTypes.string,
+  tag: PropTypes.string,
+  location: PropTypes.string,
+  followers: PropTypes.number,
+  views: PropTypes.number,
+  likes: PropTypes.number,
+};

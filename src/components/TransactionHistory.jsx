@@ -1,4 +1,6 @@
+import PropTypes from 'prop-types';
 import Transaction from './Transaction';
+
 export default function TransactionHistory({ transactions }) {
   return (
     <table class="transaction-history">
@@ -18,3 +20,8 @@ export default function TransactionHistory({ transactions }) {
     </table>
   );
 }
+
+Transaction.protTypes = {
+  transactions: PropTypes.array,
+  transaction: PropTypes.object,
+};
