@@ -16,7 +16,7 @@ export default function Statistics({ title, stats }) {
       <StaticList>
         {stats.map(({ label, percentage, id }) => {
           return (
-            <StaticItem key={id}>
+            <StaticItem key={id} label={label}>
               <StaticSpanLabel>{label}</StaticSpanLabel>
               <StaticSpanPerc>{percentage}%</StaticSpanPerc>
             </StaticItem>

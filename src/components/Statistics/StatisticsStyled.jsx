@@ -3,6 +3,7 @@ import styled from 'styled-components';
 export const SectionStatistics = styled.section`
   background-color: #f7f9fa;
   padding-top: 20px;
+  padding-bottom: 20px;
 `;
 export const TitleStat = styled.h2`
   padding: 0;
@@ -14,8 +15,7 @@ export const StaticList = styled.ul`
   display: flex;
   justify-content: space-evenly;
   padding-left: 0px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+
   border: 1px solid #a4abaa;
 
   margin: 0px;
@@ -38,8 +38,39 @@ export const StaticSpanPerc = styled.span`
   line-height: 2;
 `;
 
+const setBgColor = ({ label }) => {
+  switch (label) {
+    case '.docx':
+      return (
+        '#' +
+        (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase()
+      );
+    case '.pdf':
+      return (
+        '#' +
+        (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase()
+      );
+    case '.mp3':
+      return (
+        '#' +
+        (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase()
+      );
+    case '.psd':
+      return (
+        '#' +
+        (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase()
+      );
+    case '.pdf':
+      return (
+        '#' +
+        (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase()
+      );
+    default:
+      return '#ffff';
+  }
+};
+
 export const StaticItem = styled.li`
-  width: 100px;
-  background-color: ${'#' +
-  (Math.random().toString(16) + '000000').substring(2, 8).toUpperCase()};
+  width: 100%;
+  background-color: ${setBgColor};
 `;
