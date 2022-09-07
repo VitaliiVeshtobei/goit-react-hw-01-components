@@ -4,7 +4,7 @@ import { TransTable } from './TransactionStyled';
 
 export default function TransactionHistory({ transactions }) {
   return (
-    <TransTable class="transaction-history">
+    <TransTable>
       <thead>
         <tr>
           <th>Type</th>
